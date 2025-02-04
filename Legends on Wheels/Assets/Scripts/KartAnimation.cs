@@ -46,15 +46,15 @@ public class KartAnimation : MonoBehaviour
         // Handle kart rotation based on drifting and horizontal input
         if (!playerKart.drifting && playerKart.moveForward || !playerKart.drifting && playerKart.moveBackward)
         {
-            kartModel.localEulerAngles = Vector3.Lerp(kartModel.localEulerAngles, new Vector3(0, 90 + (Input.GetAxis("Horizontal") * 15), kartModel.localEulerAngles.z), .2f);
+            kartModel.localEulerAngles = Vector3.Lerp(kartModel.localEulerAngles, new Vector3(0, 90 + (Input.GetAxis("Horizontal") * 5), kartModel.localEulerAngles.z), .2f);
         }
         else
         {
             float control = (playerKart.driftDirection == 1) ? ExtensionMethods.Remap(Input.GetAxis("Horizontal"), -1, 1, .5f, 2) : ExtensionMethods.Remap(Input.GetAxis("Horizontal"), -1, 1, 2, .5f);
-            kartModel.parent.localRotation = Quaternion.Euler(0, Mathf.LerpAngle(kartModel.parent.localEulerAngles.y, (control * 15) * playerKart.driftDirection, .2f), 0);
+            kartModel.parent.localRotation = Quaternion.Euler(0, Mathf.LerpAngle(kartModel.parent.localEulerAngles.y, (control * 45) * playerKart.driftDirection, .2f), 0);
         }
 
-        if (playerKart.moveForward == false || playerKart.moveBackward == false)
+        if (playerKart.moveForward == false || playerKart.moveBackward == false || playerKart.drifting == false)
         {
             kartModel.parent.DOLocalRotate(Vector3.zero, .5f).SetEase(Ease.OutBack);
         }

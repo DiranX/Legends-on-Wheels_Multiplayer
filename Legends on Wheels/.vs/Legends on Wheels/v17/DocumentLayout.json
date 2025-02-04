@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Unity Projects\\Legends on Wheels\\",
+  "WorkspaceRootPath": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|d:\\unity projects\\legends on wheels\\assets\\scripts\\playerkartinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerkartinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|d:\\github\\legends-on-wheels_multiplayer\\legends on wheels\\assets\\scripts\\lapcountermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lapcountermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|d:\\unity projects\\legends on wheels\\assets\\scripts\\playerkartkontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|d:\\github\\legends-on-wheels_multiplayer\\legends on wheels\\assets\\scripts\\kartanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kartanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\assets\\scripts\\playerkartkontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerkartkontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|D:\\Unity Projects\\Legends on Wheels\\assets\\mariokart-drift-master\\assets\\kartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\assets\\mariokart-drift-master\\assets\\kartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\mariokart-drift-master\\assets\\kartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|D:\\Unity Projects\\Legends on Wheels\\assets\\scripts\\kartanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C2D1E68-F650-D73D-803F-74D750550AEE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kartanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,54 +31,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerKartInput.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\PlayerKartInput.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerKartInput.cs",
-              "ToolTip": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\PlayerKartInput.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerKartInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "LapCounterManager.cs",
+              "DocumentMoniker": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\LapCounterManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LapCounterManager.cs",
+              "ToolTip": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\LapCounterManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LapCounterManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T06:49:42.821Z",
+              "WhenOpened": "2025-02-04T15:19:54.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "KartAnimation.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\KartAnimation.cs",
+              "DocumentMoniker": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\KartAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\KartAnimation.cs",
-              "ToolTip": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\KartAnimation.cs",
+              "ToolTip": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\KartAnimation.cs",
               "RelativeToolTip": "Assets\\Scripts\\KartAnimation.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwDoAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA1wDAAAACGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T20:51:28.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PlayerKartKontroller.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\PlayerKartKontroller.cs",
+              "DocumentMoniker": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\PlayerKartKontroller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerKartKontroller.cs",
-              "ToolTip": "D:\\Unity Projects\\Legends on Wheels\\Assets\\Scripts\\PlayerKartKontroller.cs",
+              "ToolTip": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\Scripts\\PlayerKartKontroller.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerKartKontroller.cs",
-              "ViewState": "AgIAANgAAAAAAAAAAAAAwHUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAQwNIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T20:06:59.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T20:06:59.019Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "KartController.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\Legends on Wheels\\Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
+              "DocumentMoniker": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
               "RelativeDocumentMoniker": "Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
-              "ToolTip": "D:\\Unity Projects\\Legends on Wheels\\Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
+              "ToolTip": "D:\\Github\\Legends-on-Wheels_Multiplayer\\Legends on Wheels\\Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
               "RelativeToolTip": "Assets\\MarioKart-Drift-master\\Assets\\KartController.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAgwMcAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T20:03:16.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T20:03:16.046Z"
             }
           ]
         }

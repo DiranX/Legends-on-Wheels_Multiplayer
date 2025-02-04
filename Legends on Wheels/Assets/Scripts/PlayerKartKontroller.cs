@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -45,8 +46,10 @@ public class PlayerKartController : MonoBehaviour
     public float driftAssistAngle = 15f; // Angle threshold for drift assist activation
 
     [Header("Drift Particle")]
-    public GameObject wheelsParticle;
+    public GameObject[] wheelsParticle;
     public ParticleSystem[] particleSystem;
+    public ParticleSystem[] flareParticle;
+    public ParticleSystem[] boostParticle;
     public Color newColor;
     public Color[] driftColor;
 
@@ -69,6 +72,8 @@ public class PlayerKartController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Drift Power: " + driftPower);
+
         if (moveForward && !moveBackward)
         {
             speed = acceleration;
@@ -99,32 +104,36 @@ public class PlayerKartController : MonoBehaviour
             Steer(driftDirection, control);
             driftPower += powerControl * Time.deltaTime * 100f;
 
-            //wheelsParticle.SetActive(true);
-            if(driftPower < level1Threshold)
-            {
-                newColor = driftColor[0];
-                ChangeParticleColor();
-            }
-            else if(driftPower >= level1Threshold)
-            {
-                newColor = driftColor[1];
-                ChangeParticleColor();
-            }
-            else if(driftPower >= level2Threshold)
+            wheelsParticle[0].SetActive(true);
+            wheelsParticle[1].SetActive(true);
+
+            // Only update the color if it changes
+            if (driftPower >= level3Threshold && newColor != driftColor[2])
             {
                 newColor = driftColor[2];
                 ChangeParticleColor();
+                PlayFlareParticle();
             }
-            else if(driftPower >= level3Threshold)
+            else if (driftPower >= level2Threshold && newColor != driftColor[1] && driftPower < level3Threshold)
             {
-                newColor = driftColor[3];
+                newColor = driftColor[1];
                 ChangeParticleColor();
+                PlayFlareParticle();
+            }
+            else if (driftPower >= level1Threshold && newColor != driftColor[0] && driftPower < level2Threshold)
+            {
+                newColor = driftColor[0];
+                ChangeParticleColor();
+                PlayFlareParticle();
             }
         }
+
 
         if (!drift && drifting)
         {
             Boost();
+            wheelsParticle[0].SetActive(false);
+            wheelsParticle[1].SetActive(false);
         }
 
         transform.position = sphere.transform.position - new Vector3(0, kartYPosition, 0);
@@ -174,7 +183,6 @@ public class PlayerKartController : MonoBehaviour
     public void Boost()
     {
         drifting = false;
-        //wheelsParticle.SetActive(false);
 
         if (driftPower >= level3Threshold)
         {
@@ -198,6 +206,10 @@ public class PlayerKartController : MonoBehaviour
 
         kartModel.parent.DOLocalRotate(Vector3.zero, .5f).SetEase(Ease.OutBack);
 
+        newColor = driftColor[3];
+        ChangeParticleColor();
+        PlayBoostParticle();
+
         driftPower = 0;
     }
 
@@ -207,14 +219,11 @@ public class PlayerKartController : MonoBehaviour
         boostTimer = boostDuration;
     }
 
-    // Drift Assist Implementation
     private void ApplyDriftAssist()
     {
-        // Apply assistance if the angle of the drift is tight
         float driftAngle = Vector3.Angle(transform.forward, sphere.velocity);
         if (driftAngle > driftAssistAngle)
         {
-            // Apply a small steering force to help guide the player around the turn
             float assistForce = Mathf.Clamp(driftAssistStrength * (driftAngle / 90f), 0f, 1f);
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, transform.eulerAngles.y + assistForce * steering, 0), Time.deltaTime * 4f);
         }
@@ -262,18 +271,31 @@ public class PlayerKartController : MonoBehaviour
         {
             if (ps == null) continue;
 
-            // Get all particles in the system
-            ParticleSystem.Particle[] particles = new ParticleSystem.Particle[ps.main.maxParticles];
-            int particleCount = ps.GetParticles(particles);
+            var colorOverLifetime = ps.colorOverLifetime;
+            colorOverLifetime.enabled = true;
 
-            // Change the color of each particle
-            for (int i = 0; i < particleCount; i++)
-            {
-                particles[i].startColor = newColor;
-            }
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new GradientColorKey[] { new GradientColorKey(newColor, 0.0f), new GradientColorKey(newColor, 1.0f) },
+                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) }
+            );
+            colorOverLifetime.color = new ParticleSystem.MinMaxGradient(gradient);
+        }
+    }
 
-            // Apply the changes
-            ps.SetParticles(particles, particleCount);
+    void PlayFlareParticle()
+    {
+        flareParticle[0].Play();
+        flareParticle[1].Play();
+        flareParticle[2].Play();
+        flareParticle[3].Play();
+    }
+
+    void PlayBoostParticle()
+    {
+        foreach (ParticleSystem boost in boostParticle)
+        {
+            boost.Play();
         }
     }
 
