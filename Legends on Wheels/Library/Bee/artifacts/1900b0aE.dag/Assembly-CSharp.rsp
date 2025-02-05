@@ -377,10 +377,12 @@
 "Assets/MarioKart-Drift-master/Assets/DOTween/Modules/DOTweenModuleUtils.cs"
 "Assets/MarioKart-Drift-master/Assets/ExtensionMethods.cs"
 "Assets/MarioKart-Drift-master/Assets/KartController.cs"
-"Assets/Scripts/KartAnimation.cs"
-"Assets/Scripts/LapCounterManager.cs"
-"Assets/Scripts/PlayerKartInput.cs"
-"Assets/Scripts/PlayerKartKontroller.cs"
+"Assets/Scripts/Player Kart Scripts/KartAnimation.cs"
+"Assets/Scripts/Player Kart Scripts/LapCounterManager.cs"
+"Assets/Scripts/Player Kart Scripts/PlayerKartInput.cs"
+"Assets/Scripts/Player Kart Scripts/PlayerKartKontroller.cs"
+"Assets/Scripts/Player Kart Scripts/playerLapCounter.cs"
+"Assets/Scripts/TrackCheckPointHolder.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic
