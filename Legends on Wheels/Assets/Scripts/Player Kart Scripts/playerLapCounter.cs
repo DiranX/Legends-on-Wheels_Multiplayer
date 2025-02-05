@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class playerLapCounter : MonoBehaviour
 {
-    public int currentCheckpoint, currentLap, totalLap;
-
+    [Header("Lap and CheckPoint")]
+    public int currentCheckpoint;
+    public int currentLap;
+    public int totalLap;
     public GameObject[] checkPoint;
-
     public TextMeshProUGUI lapCounter;
+    public TextMeshProUGUI PlacementCounter;
+    public int playerCurrentPlace;
 
     private void Awake()
     {
@@ -22,22 +26,24 @@ public class playerLapCounter : MonoBehaviour
             totalLap = TrackCheckPoint.GetComponent<TrackCheckPointHolder>().TrackTotalLap;
         }
     }
-
     private void Start()
     {
         lapCounter.text = currentLap.ToString() + "/" + totalLap.ToString();
     }
-
+    private void Update()
+    {
+        PlacementCounter.text = playerCurrentPlace.ToString();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == checkPoint[currentCheckpoint])
         {
-            currentCheckpoint++;
+            this.currentCheckpoint++;
             if (currentCheckpoint == checkPoint.Length)
             {
-                currentCheckpoint = 0;
-                currentLap++;
-                lapCounter.text = currentLap.ToString() + "/" + totalLap.ToString();
+                this.currentCheckpoint = 0;
+                this.currentLap++;
+                this.lapCounter.text = currentLap.ToString() + "/" + totalLap.ToString();
             }
 
             if (currentLap >= totalLap)

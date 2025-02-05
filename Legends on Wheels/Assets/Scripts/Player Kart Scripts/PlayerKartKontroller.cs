@@ -285,10 +285,10 @@ public class PlayerKartController : MonoBehaviour
 
     void PlayFlareParticle()
     {
-        flareParticle[0].Play();
-        flareParticle[1].Play();
-        flareParticle[2].Play();
-        flareParticle[3].Play();
+        foreach( ParticleSystem flare in flareParticle)
+        {
+            flare.Play();
+        }
     }
 
     void PlayBoostParticle()
